@@ -1,48 +1,8 @@
-<!DOCTYPE html>
+@extends('layouts.app')
 
-<html lang="id" data-theme="blue">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@section('title', 'Beranda - KursusKu')
 
-<title>{{ $siteName }}</title>
-@vite(['resources/css/app.css', 'resources/js/app.js'])
-<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-
-</head>
-
-<body>
-
-{{-- NAVBAR --}}
-<header class="site-header">
-    <div class="navbar">
-
-        <a href="{{ route('home') }}" class="brand">
-            {{ $siteName }}
-        </a>
-
-        <nav class="nav-links">
-            <a href="#beranda">Beranda</a>
-            <a href="#keunggulan">Keunggulan</a>
-            <a href="#katalog">Katalog</a>
-            <a href="#cara-daftar">Cara Daftar</a>
-            <a href="#media">Media</a>
-            <a href="#kontak">Kontak</a>
-        </nav>
-
-        <select id="themeSwitcher" aria-label="Pilih tema warna">
-            <option value="blue">Biru</option>
-            <option value="purple">Ungu</option>
-            <option value="green">Hijau</option>
-            <option value="sunset">Sunset</option>
-            <option value="dark">Dark</option>
-        </select>
-
-    </div>
-</header>
-
-
-<main>
+@section('content')
 
     {{-- HERO --}}
     <section class="hero" id="beranda">
@@ -489,3 +449,4 @@
 
 </body>
 </html>
+@ensdsection

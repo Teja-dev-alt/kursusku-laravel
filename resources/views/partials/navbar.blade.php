@@ -1,24 +1,51 @@
-<header class="site-header">
-    <nav class="navbar">
-        <a href="{{ route('home') }}" class="brand">
-            {{ $siteName ?? 'KursusKu UIN' }}
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+
+        <a class="navbar-brand" href="{{ route('home') }}">
+            KursusKu UIN
         </a>
 
-        <div class="nav-links">
-            <a href="{{ route('home') }}">Beranda</a>
-            <a href="{{ route('home') }}#keunggulan">Keunggulan</a>
-            <a href="{{ route('home') }}#katalog">Katalog</a>
-            <a href="{{ route('home') }}#cara-daftar">Cara Daftar</a>
-            <a href="{{ route('home') }}#media">Media</a>
-            <a href="{{ route('home') }}#kontak">Kontak</a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Buka navigasi"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        Beranda
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="{{ route('home') }}#katalog"
+                    >
+                        Katalog
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="{{ route('enrollments.create') }}"
+                    >
+                        Pendaftaran
+                    </a>
+                </li>
+
+            </ul>
         </div>
 
-        <select id="themeSwitcher" aria-label="Pilih tema">
-            <option value="blue">Biru</option>
-            <option value="purple">Ungu</option>
-            <option value="green">Hijau</option>
-            <option value="sunset">Sunset</option>
-            <option value="dark">Dark</option>
-        </select>
-    </nav>
-</header>
+    </div>
+</nav>
