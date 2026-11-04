@@ -1,1 +1,575 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+/* =====================================
+   DEFAULT THEME
+===================================== */
+
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+
+    --hero-start: #1e3a8a;
+    --hero-end: #2563eb;
+
+    --navbar-bg: #172554;
+    --footer-bg: #172554;
+
+    --page-bg: #f8fafc;
+    --section-bg: #eff6ff;
+
+    --surface: #ffffff;
+
+    --text: #0f172a;
+    --muted: #64748b;
+
+    --border: #e2e8f0;
+
+    --table-head: #172554;
+    --soft-bg: #dbeafe;
+    --soft-text: #1e40af;
+}
+
+
+/* =====================================
+   1. BLUE THEME
+===================================== */
+
+:root[data-theme="blue"] {
+    color-scheme: light;
+
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+
+    --hero-start: #1e3a8a;
+    --hero-end: #2563eb;
+
+    --navbar-bg: #1e3a8a;
+    --footer-bg: #172554;
+
+    --page-bg: #f8fafc;
+    --section-bg: #eff6ff;
+
+    --surface: #ffffff;
+
+    --text: #0f172a;
+    --muted: #64748b;
+
+    --border: #dbeafe;
+
+    --table-head: #172554;
+    --soft-bg: #dbeafe;
+    --soft-text: #1e40af;
+}
+
+
+/* =====================================
+   2. GREEN THEME
+===================================== */
+
+:root[data-theme="green"] {
+    color-scheme: light;
+
+    --primary: #16a34a;
+    --primary-hover: #15803d;
+
+    --hero-start: #14532d;
+    --hero-end: #16a34a;
+
+    --navbar-bg: #14532d;
+    --footer-bg: #052e16;
+
+    --page-bg: #f0fdf4;
+    --section-bg: #dcfce7;
+
+    --surface: #ffffff;
+
+    --text: #14532d;
+    --muted: #64748b;
+
+    --border: #bbf7d0;
+
+    --table-head: #14532d;
+    --soft-bg: #dcfce7;
+    --soft-text: #166534;
+}
+
+
+/* =====================================
+   3. PURPLE THEME
+===================================== */
+
+:root[data-theme="purple"] {
+    color-scheme: light;
+
+    --primary: #7c3aed;
+    --primary-hover: #6d28d9;
+
+    --hero-start: #4c1d95;
+    --hero-end: #7c3aed;
+
+    --navbar-bg: #4c1d95;
+    --footer-bg: #2e1065;
+
+    --page-bg: #faf5ff;
+    --section-bg: #f3e8ff;
+
+    --surface: #ffffff;
+
+    --text: #3b0764;
+    --muted: #6b7280;
+
+    --border: #e9d5ff;
+
+    --table-head: #4c1d95;
+    --soft-bg: #f3e8ff;
+    --soft-text: #6b21a8;
+}
+
+
+/* =====================================
+   4. ORANGE THEME
+===================================== */
+
+:root[data-theme="orange"] {
+    color-scheme: light;
+
+    --primary: #ea580c;
+    --primary-hover: #c2410c;
+
+    --hero-start: #9a3412;
+    --hero-end: #ea580c;
+
+    --navbar-bg: #9a3412;
+    --footer-bg: #431407;
+
+    --page-bg: #fff7ed;
+    --section-bg: #ffedd5;
+
+    --surface: #ffffff;
+
+    --text: #431407;
+    --muted: #78716c;
+
+    --border: #fed7aa;
+
+    --table-head: #9a3412;
+    --soft-bg: #ffedd5;
+    --soft-text: #9a3412;
+}
+
+
+/* =====================================
+   5. DARK THEME
+===================================== */
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --primary: #818cf8;
+    --primary-hover: #6366f1;
+
+    --hero-start: #111827;
+    --hero-end: #312e81;
+
+    --navbar-bg: #020617;
+    --footer-bg: #020617;
+
+    --page-bg: #0f172a;
+    --section-bg: #111827;
+
+    --surface: #1e293b;
+
+    --text: #f1f5f9;
+    --muted: #cbd5e1;
+
+    --border: #334155;
+
+    --table-head: #020617;
+    --soft-bg: #312e81;
+    --soft-text: #c7d2fe;
+}
+
+
+/* =====================================
+   GLOBAL
+===================================== */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    background: var(--page-bg) !important;
+    color: var(--text) !important;
+    transition: background 0.3s, color 0.3s;
+}
+
+p {
+    color: var(--muted);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text);
+}
+
+
+/* =====================================
+   NAVBAR
+===================================== */
+
+.kursusku-navbar {
+    background: var(--navbar-bg) !important;
+    padding: 14px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s;
+}
+
+.kursusku-navbar .navbar-brand {
+    color: #ffffff !important;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-symbol {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.kursusku-navbar .nav-link {
+    color: rgba(255,255,255,0.85) !important;
+    font-weight: 500;
+    padding: 10px 12px !important;
+    transition: 0.2s;
+}
+
+.kursusku-navbar .nav-link:hover {
+    color: #ffffff !important;
+    opacity: 0.75;
+}
+
+
+/* =====================================
+   THEME SWITCHER
+===================================== */
+
+.theme-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 15px;
+}
+
+.theme-label {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.theme-switcher {
+    min-width: 125px;
+    background-color: var(--surface) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 9px !important;
+    padding: 9px 12px;
+    cursor: pointer;
+}
+
+.theme-switcher:focus {
+    box-shadow: 0 0 0 3px var(--soft-bg) !important;
+}
+
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero {
+    background: linear-gradient(
+        120deg,
+        var(--hero-start),
+        var(--hero-end)
+    ) !important;
+
+    color: #ffffff !important;
+    transition: background 0.3s;
+}
+
+.hero h1,
+.hero h2,
+.hero h3,
+.hero p,
+.hero span,
+.hero strong {
+    color: #ffffff;
+}
+
+.hero-badge {
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.12);
+    border-radius: 30px;
+    padding: 10px 17px;
+}
+
+.hero-info-card {
+    background: rgba(255,255,255,0.12) !important;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 18px;
+}
+
+
+/* =====================================
+   SECTION
+===================================== */
+
+.section {
+    background: var(--page-bg) !important;
+    color: var(--text) !important;
+    transition: background 0.3s;
+}
+
+.section-light {
+    background: var(--section-bg) !important;
+}
+
+.section-heading h2 {
+    color: var(--text) !important;
+}
+
+.section-heading p {
+    color: var(--muted) !important;
+}
+
+.section-label {
+    color: var(--primary) !important;
+    background: var(--soft-bg) !important;
+    border-radius: 30px;
+    padding: 7px 14px;
+}
+
+
+/* =====================================
+   CARD
+===================================== */
+
+.feature-card,
+.step,
+.media-card,
+.contact-card,
+.card {
+    background: var(--surface) !important;
+    color: var(--text) !important;
+
+    border: 1px solid var(--border) !important;
+
+    transition:
+        background 0.3s,
+        color 0.3s,
+        border 0.3s;
+}
+
+.feature-card h3,
+.step h3,
+.media-card h3,
+.contact-card h2 {
+    color: var(--text) !important;
+}
+
+.feature-card p,
+.step p,
+.media-card p,
+.contact-card p {
+    color: var(--muted) !important;
+}
+
+
+/* =====================================
+   ICON
+===================================== */
+
+.feature-icon,
+.step-number {
+    background: var(--soft-bg) !important;
+    color: var(--primary) !important;
+}
+
+
+/* =====================================
+   TABLE
+===================================== */
+
+.table-wrapper {
+    background: var(--surface) !important;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.table-wrapper table {
+    color: var(--text) !important;
+    background: var(--surface) !important;
+}
+
+.table-wrapper thead th {
+    background: var(--table-head) !important;
+    color: #ffffff !important;
+    border-color: var(--table-head) !important;
+}
+
+.table-wrapper tbody td {
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+.table-wrapper tbody tr:hover td {
+    background: var(--section-bg) !important;
+}
+
+
+/* =====================================
+   BUTTON
+===================================== */
+
+.btn-primary {
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: #ffffff !important;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover) !important;
+    border-color: var(--primary-hover) !important;
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.15) !important;
+    border-color: rgba(255,255,255,0.5) !important;
+    color: #ffffff !important;
+}
+
+
+/* =====================================
+   FORM
+===================================== */
+
+.form-control,
+.form-select {
+    background-color: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem var(--soft-bg);
+}
+
+
+/* =====================================
+   AVAILABILITY
+===================================== */
+
+#availability {
+    background: linear-gradient(
+        120deg,
+        var(--hero-start),
+        var(--hero-end)
+    ) !important;
+
+    color: #ffffff !important;
+    border: 1px solid var(--primary) !important;
+    border-radius: 18px;
+    padding: 30px;
+}
+
+#availability.alert-success,
+#availability.alert-secondary {
+    color: #ffffff !important;
+}
+
+
+/* =====================================
+   STATUS BADGE
+===================================== */
+
+.badge-available {
+    background: var(--soft-bg) !important;
+    color: var(--soft-text) !important;
+}
+
+.badge-full {
+    background: #fee2e2 !important;
+    color: #991b1b !important;
+}
+
+
+/* =====================================
+   DOCUMENTATION
+===================================== */
+
+.documentation-link {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 9px;
+
+    background: var(--soft-bg) !important;
+    color: var(--soft-text) !important;
+
+    font-weight: 600;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    background: var(--footer-bg) !important;
+    color: #ffffff !important;
+    transition: background 0.3s;
+}
+
+footer p,
+footer small {
+    color: #ffffff !important;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 991px) {
+
+    .theme-item {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        margin: 12px 0;
+    }
+
+    .theme-switcher {
+        width: 100%;
+    }
+
+    .theme-label {
+        margin-bottom: 5px;
+    }
+
+}

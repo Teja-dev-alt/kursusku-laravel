@@ -100,3 +100,25 @@ $(document).on('change', '#course_id', function () {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const themeSwitcher = document.getElementById('themeSwitcher');
+
+    const savedTheme = localStorage.getItem('kursusku-theme') || 'blue';
+
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    if (!themeSwitcher) {
+        return;
+    }
+
+    themeSwitcher.value = savedTheme;
+
+    themeSwitcher.addEventListener('change', function () {
+        const selectedTheme = this.value;
+
+        document.documentElement.setAttribute('data-theme', selectedTheme);
+
+        localStorage.setItem('kursusku-theme', selectedTheme);
+    });
+});
