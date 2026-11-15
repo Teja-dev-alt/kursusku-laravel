@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\EnrollmentController;
 
 // Beranda
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -17,7 +18,7 @@ Route::get('/pendaftaran', function () {
     ];
 
     return view('enrollments.create', compact('courses'));
-})->name('enrollments.create');
+})->name('enrollments.preview.old');
 
 // Preview pendaftaran Week 9
 Route::post('/pendaftaran/preview', function (Request $request) {
@@ -57,5 +58,9 @@ Route::get('/courses/{course}/availability', function (string $course) {
     return response()->json($availability[$course]);
 })->name('courses.availability');
 
-// CRUD Course Week 10
+// CRUD Course Week 10–11
 Route::resource('courses', CourseController::class);
+
+// Enrollment Week 12
+Route::resource('enrollments', EnrollmentController::class)
+    ->only(['index', 'create', 'store']);
